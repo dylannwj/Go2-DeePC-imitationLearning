@@ -4,9 +4,7 @@ Research implementation accompanying a bachelor's thesis on **Data-enabled Predi
 
 The project studies DeePC as a **high-level controller** that generates body-frame velocity commands
 
-\[
-u = [v_x,\; v_y,\; \omega_z]^T
-\]
+`u = [v_x, v_y, yaw_rate]^T`
 
 while locomotion is handled by a separate execution layer.
 
