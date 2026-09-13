@@ -1,0 +1,110 @@
+{
+  "cache_paths": {
+    "genesis_cache": "/tmp/mjlab_expert_compatibility_gate/genesis",
+    "matplotlib_cache": "/tmp/mjlab_expert_compatibility_gate/matplotlib",
+    "quadrants_cache": "/tmp/mjlab_expert_compatibility_gate/quadrants"
+  },
+  "checkpoint": {
+    "epoch": 98,
+    "path": "/home/dylan/Desktop/Go2Project/student_bc/linear_output_revision/checkpoints/candidates/seed_2_best.pt",
+    "seed": 2,
+    "sha256": "6169c02e924dfb09078d9cba63e4071abd11a477ab2b104e92506df7ce0ed7cc"
+  },
+  "classification": "STUDENT_BC_LINEAR_CLOSED_LOOP_PASS",
+  "core_command_repetitions": 3,
+  "dataset_sha256": "7c6da8cf8987711f099d01976b594b3119322158c3f750f4cdd71158c9c4ac99",
+  "do_not_start_downstream_automatically": true,
+  "do_not_start_ppo_or_dagger_automatically": true,
+  "dominant_failure": null,
+  "elapsed_seconds": 682.6244537830353,
+  "expert_episode_count": 33,
+  "final_checkpoint_path": "/home/dylan/Desktop/Go2Project/student_bc/linear_output_revision/checkpoints/final/go2_observable_student_bc_linear_v1.pt",
+  "gates": {
+    "actual_joint_limit_violations": 0,
+    "all_static_full_duration": true,
+    "arc_gate": true,
+    "base_contacts": 0,
+    "dominant_failure": null,
+    "falls": 0,
+    "forward_gate": true,
+    "lateral_gate": true,
+    "nan_inf": 0,
+    "raw_q_target_clip_events": 60,
+    "raw_target_saturation_gate": true,
+    "safety_gate": true,
+    "standing_gate": true,
+    "torque_limit_exceedances": 0,
+    "transition_gate": true,
+    "video_gate": true,
+    "yaw_gate": true
+  },
+  "next_authorized_phase": "FREEZE FINAL STUDENT LOCOMOTION ENVELOPE AND PREPARE DeePC INTEGRATION",
+  "retention_rows": 27,
+  "schema": "linear-output-closed-loop-result-v1",
+  "student_episode_count": 33,
+  "video_results": [
+    {
+      "classification": "CLEAN",
+      "name": "standing",
+      "path": "/home/dylan/Desktop/Go2Project/student_bc/linear_output_revision/videos/standing.mp4",
+      "steps": 500,
+      "termination_reason": "time_limit"
+    },
+    {
+      "classification": "CLEAN",
+      "name": "forward_010",
+      "path": "/home/dylan/Desktop/Go2Project/student_bc/linear_output_revision/videos/forward_010.mp4",
+      "steps": 500,
+      "termination_reason": "time_limit"
+    },
+    {
+      "classification": "CLEAN",
+      "name": "yaw_left_030",
+      "path": "/home/dylan/Desktop/Go2Project/student_bc/linear_output_revision/videos/yaw_left_030.mp4",
+      "steps": 500,
+      "termination_reason": "time_limit"
+    },
+    {
+      "classification": "CLEAN",
+      "name": "yaw_right_030",
+      "path": "/home/dylan/Desktop/Go2Project/student_bc/linear_output_revision/videos/yaw_right_030.mp4",
+      "steps": 500,
+      "termination_reason": "time_limit"
+    },
+    {
+      "classification": "CLEAN",
+      "name": "left_arc",
+      "path": "/home/dylan/Desktop/Go2Project/student_bc/linear_output_revision/videos/left_arc.mp4",
+      "steps": 500,
+      "termination_reason": "time_limit"
+    },
+    {
+      "classification": "CLEAN",
+      "name": "right_arc",
+      "path": "/home/dylan/Desktop/Go2Project/student_bc/linear_output_revision/videos/right_arc.mp4",
+      "steps": 500,
+      "termination_reason": "time_limit"
+    },
+    {
+      "classification": "CLEAN",
+      "name": "lateral_left_015",
+      "path": "/home/dylan/Desktop/Go2Project/student_bc/linear_output_revision/videos/lateral_left_015.mp4",
+      "steps": 500,
+      "termination_reason": "time_limit"
+    },
+    {
+      "classification": "CLEAN",
+      "name": "lateral_right_015",
+      "path": "/home/dylan/Desktop/Go2Project/student_bc/linear_output_revision/videos/lateral_right_015.mp4",
+      "steps": 500,
+      "termination_reason": "time_limit"
+    },
+    {
+      "classification": "CLEAN",
+      "name": "transition",
+      "path": "/home/dylan/Desktop/Go2Project/student_bc/linear_output_revision/videos/transition.mp4",
+      "steps": 1150,
+      "termination_reason": "time_limit"
+    }
+  ]
+}

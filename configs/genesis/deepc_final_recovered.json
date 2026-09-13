@@ -1,0 +1,33 @@
+{
+  "schema": "final-deepc-student-recovered-config-v1",
+  "status": "FROZEN_FINAL_RECOVERY_CONFIGURATION",
+  "base_candidate": "deepc_recovery_candidate.json",
+  "hankel_sha256": "5ece444b2d82a75df6b751809d2b5f5c1aacfe06cc69a0919fa21532804bfb7b",
+  "dataset_v2_sha256": "e7f7f62e9bf54eb64956eb193a974d78690533bd34fa0a29234b08e268c902a3",
+  "student_checkpoint_sha256": "6169c02e924dfb09078d9cba63e4071abd11a477ab2b104e92506df7ce0ed7cc",
+  "deepc": {
+    "T_ini": 10,
+    "N": 20,
+    "sample_dt_s": 0.1,
+    "reference_gain": 2.75,
+    "input": ["vx", "vy", "yaw_rate"],
+    "output": ["forward_step_m", "left_step_m", "yaw_step_rad"],
+    "hankel_stride": 2
+  },
+  "qp": {
+    "tracking_weights": [40.0, 40.0, 20.0],
+    "input_weights": [0.000001, 0.000001, 0.000001],
+    "past_input_weight": 50.0,
+    "past_output_weight": 200.0,
+    "delta_input_weight": 0.1,
+    "g_weight": 0.001,
+    "solver": "OSQP",
+    "solver_eps_abs": 1e-5,
+    "solver_eps_rel": 1e-5,
+    "solver_max_iter": 50000,
+    "runtime_input_bounds": null,
+    "runtime_command_projection": false
+  },
+  "architecture": "one unified 3-input measured-feedback receding-horizon DeePC directly drives the frozen student",
+  "target_specific_logic": false
+}

@@ -1,0 +1,68 @@
+{
+  "window": {
+    "width": 1320,
+    "height": 800
+  },
+  "map": {
+    "initial_span_m": 1.2,
+    "robot_view_span_m": 1.4,
+    "fixed_center_m": [0.0, 0.0],
+    "target_tolerance_visual_m": 0.06,
+    "max_trail_points": 25000
+  },
+  "runtime": {
+    "genesis_viewer_res": [880, 760],
+    "ui_update_hz": 10
+  },
+  "default_target_id": "P1",
+  "target_presets": [
+    {
+      "target_id": "P0",
+      "label": "standing",
+      "x_m": 0.0,
+      "y_m": 0.0,
+      "yaw_rad": 0.0
+    },
+    {
+      "target_id": "P1",
+      "label": "FORWARD / T1_forward_025",
+      "x_m": 0.25,
+      "y_m": 0.0,
+      "yaw_rad": 0.0
+    },
+    {
+      "target_id": "P2",
+      "label": "LATERAL / I_lateral_correction_015",
+      "x_m": 0.0,
+      "y_m": 0.15,
+      "yaw_rad": 0.0
+    },
+    {
+      "target_id": "P3",
+      "label": "YAW / T4_yaw_030",
+      "x_m": 0.0,
+      "y_m": 0.0,
+      "yaw_rad": 0.3
+    },
+    {
+      "target_id": "P4",
+      "label": "MIXED / T5_forward_yaw",
+      "x_m": 0.2,
+      "y_m": 0.0,
+      "yaw_rad": 0.3
+    },
+    {
+      "target_id": "P5",
+      "label": "T2_lateral_020",
+      "x_m": 0.0,
+      "y_m": 0.2,
+      "yaw_rad": 0.0
+    }
+  ],
+  "product": {
+    "name": "Final DeePC + Learned Go2",
+    "map_default": "fixed_world",
+    "command_boundary": "DeePC u0 == frozen student command",
+    "feedback_source": "actual Genesis measured pose"
+  }
+}

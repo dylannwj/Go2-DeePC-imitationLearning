@@ -1,0 +1,26 @@
+# Python cache and virtual environments
+__pycache__/
+*.py[cod]
+*.so
+.DS_Store
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local generated runtime output
+logs/
+tmp/
+temp/
+cache/
+*.log
+
+# Large or regenerable artifacts
+data/imitation/*.npz
+data/imitation/*.npy
+data/imitation/*.pt
+outputs/
+runs/
+wandb/

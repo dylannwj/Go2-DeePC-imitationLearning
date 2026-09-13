@@ -1,0 +1,51 @@
+{
+  "T2": "PASS",
+  "bounded_search_exhausted": false,
+  "candidate_name": "PRE_S6_MINIMAL_SAFETY_CANDIDATE_V1",
+  "checks": {
+    "inside_optimization": true,
+    "known_historical_failure_intervention": true,
+    "performance_gate": true,
+    "runtime_identity": true,
+    "safety_gate": true,
+    "solver_runtime_consistency": true,
+    "student_hash": true,
+    "target_specific_logic": false
+  },
+  "current_champion": "CURRENT_SAFE_CONSTRAINED_DEEPC",
+  "current_champion_unchanged": true,
+  "direct_boundary_mismatches": 0,
+  "generated_utc": "2026-09-13T04:09:44.651131+00:00",
+  "genesis_authorized": true,
+  "genesis_runtime_status": "COMPLETE",
+  "hard_safety_events": 0,
+  "interpretation": "A clean bounded candidate result is not a universal safety proof; the selected facet is supported by one directly reconstructed S3 mechanism and limited historical UI command evidence.",
+  "known_historical_failure_intervention": "PASS",
+  "offline_gate": {
+    "gate_pass": true,
+    "inside_optimization": true,
+    "successful_T2_critical_behavior_retained": "15/15",
+    "successful_T2_retention_fraction": 1.0,
+    "successful_replay_retention": "155/155",
+    "successful_replay_retention_fraction": 1.0,
+    "target_specific_logic": false,
+    "verified_unsafe_mechanism_rejected": "1/1"
+  },
+  "outcome": "MINIMAL_FIX_SUCCESS",
+  "phase_result": "COMPLETE",
+  "post_solver_modifications": 0,
+  "promotion": "CANDIDATE_FOR_FINAL_VALIDATION",
+  "schema": "pre-s6-minimal-safety-fix-candidate-decision-v1",
+  "selected_minimal_fix": "NARROW_MIXED_COMMAND_MINIMAL_FIX",
+  "solver_failures": 0,
+  "target_reaching_regression": "NO",
+  "target_results": {
+    "P0": "TARGET_REACHED",
+    "P1": "TARGET_REACHED",
+    "P2": "SAFE_PROGRESS_BUT_TIMEOUT",
+    "P3": "TARGET_REACHED",
+    "P4": "TARGET_REACHED",
+    "P5": "TARGET_REACHED"
+  },
+  "targets_reached": "5/6"
+}

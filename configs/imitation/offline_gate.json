@@ -1,0 +1,69 @@
+{
+  "checks": [
+    {
+      "detail": "all selected/test predictions finite; all seeds had zero NaN/Inf batches",
+      "name": "finite outputs and training numerics",
+      "passed": true
+    },
+    {
+      "detail": "minimum test prediction std=0.107083656",
+      "name": "no collapsed output dimensions",
+      "passed": true
+    },
+    {
+      "detail": "train=0.000245027881; val=0.000290284288; test=0.000279746145; test/val=0.9637",
+      "name": "train/validation/test errors reasonably aligned",
+      "passed": true
+    },
+    {
+      "detail": "mean_pearson=0.996394; min_pearson=0.992458; max_normalized_mse=0.015125",
+      "name": "strong expert/student action agreement",
+      "passed": true
+    },
+    {
+      "detail": "worst_behavior_mse_ratio=1.702081; behavior_mse={'standing': 0.00013926624401672572, 'forward': 0.0003008578600673184, 'backward': 0.0003207767771153237, 'lateral_left': 0.00024137147968798233, 'lateral_right': 0.0004761504891791854, 'yaw_left': 0.0002598042133836229, 'yaw_right': 0.00026314717909284123, 'forward_yaw': 0.000223392335070352, 'mixed': 0.0004370745584869483}",
+      "name": "no catastrophic command-class failure",
+      "passed": true
+    },
+    {
+      "detail": "transition_mse=0.000415382059; steady_state_mse=0.000230686346; ratio=1.800636",
+      "name": "transition performance acceptable",
+      "passed": true
+    },
+    {
+      "detail": "expert=[-1.66598,2.57794]; student=[-1.78861,2.6319]; student_fraction_outside=0.230045",
+      "name": "output range is not artificially tanh-bounded",
+      "passed": true
+    }
+  ],
+  "classification": "LINEAR_BC_OFFLINE_PASS",
+  "prediction_std_per_joint": [
+    0.13448412716388702,
+    0.25776708126068115,
+    0.3145158588886261,
+    0.12511904537677765,
+    0.19748809933662415,
+    0.317788302898407,
+    0.1371603161096573,
+    0.15676403045654297,
+    0.35100680589675903,
+    0.12986552715301514,
+    0.10708365589380264,
+    0.3042031228542328
+  ],
+  "schema": "linear-output-bc-offline-gate-v1",
+  "target_variance_per_joint": [
+    0.017770756036043167,
+    0.06581813842058182,
+    0.09899231791496277,
+    0.016039082780480385,
+    0.03926029056310654,
+    0.10057234764099121,
+    0.018791545182466507,
+    0.025539884343743324,
+    0.12339680641889572,
+    0.016761576756834984,
+    0.011473733000457287,
+    0.09548086673021317
+  ]
+}

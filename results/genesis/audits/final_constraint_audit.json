@@ -1,0 +1,35 @@
+{
+  "C1_ACTIVE": "NO",
+  "C2_CONSTRAINT_ACTIVE": "YES",
+  "C3_ACTIVE": "NO",
+  "CANONICAL_CONTINUOUS_SAFE_SET_ACTIVE": "NO",
+  "S6_ACTIVE": "NO",
+  "audit_status": "PASS",
+  "candidate": "PRE_S6_MINIMAL_SAFETY_CANDIDATE_V1",
+  "canonical_safe_set_imported": false,
+  "constraint": {
+    "effective_limit": 0.28800664310564905,
+    "expression": "future_input[t, vy] + future_input[t, yaw_rate] <= limit for t=0..N-1",
+    "feature_coefficients": [
+      0.0,
+      1.0,
+      1.0
+    ],
+    "inside_optimization": true,
+    "json_literal": "0.28800664310564905",
+    "source_line": "constraints = [future_input[1::3] + future_input[2::3] <= float(limit)]",
+    "source_occurrences": 1,
+    "target_independent": true
+  },
+  "generated_utc": "2026-09-13T04:31:39.289082+00:00",
+  "later_branch_safety_constraints_loaded": false,
+  "no_fallback_controller": true,
+  "no_policy_switching": true,
+  "no_target_specific_logic": true,
+  "post_solver_command_rewriting": "NO",
+  "runtime_command_projection": false,
+  "runtime_identity_status": "PASS",
+  "runtime_input_bounds": null,
+  "runtime_max_delta_input": null,
+  "schema": "pre-s6-minimal-safety-final-constraint-audit-v1"
+}

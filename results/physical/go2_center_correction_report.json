@@ -1,0 +1,124 @@
+{
+  "estimated_body_offset_in_tracked_frame_m": {
+    "rx_forward_m": 0.08392210436264078,
+    "ry_left_m": 0.02708164171004897
+  },
+  "fit_rows": 924,
+  "fit_segments": 8,
+  "fit_rmse_m": 0.032276170177261636,
+  "outputs": {
+    "corrected_increment_csv": "go2_center_corrected_increment_dataset_2026_06_10.csv",
+    "corrected_hankel": "go2_center_corrected_hankel_Tini10_N20_vx_yaw_increment_2026_06_10.npz"
+  },
+  "turn_window_stats_before": {
+    "positive": {
+      "n": 386,
+      "xy_drift_median_m": 0.08035095211367033,
+      "yaw_median_rad": 0.27772425254130584
+    },
+    "negative": {
+      "n": 386,
+      "xy_drift_median_m": 0.08069399499072283,
+      "yaw_median_rad": -0.23536099861516752
+    }
+  },
+  "turn_window_stats_after": {
+    "positive": {
+      "n": 386,
+      "xy_drift_median_m": 0.027454528332569943,
+      "yaw_median_rad": 0.27772425254130684
+    },
+    "negative": {
+      "n": 386,
+      "xy_drift_median_m": 0.02650625693687044,
+      "yaw_median_rad": -0.23536099861516835
+    }
+  },
+  "selections": {
+    "forward": {
+      "file": "go2_center_corrected_hankel_SELECTED_FORWARD_N20_120.npz",
+      "columns": 120,
+      "valid": 956,
+      "terminal_forward_minmax": [
+        0.005224146370182531,
+        0.04019206814591204
+      ],
+      "terminal_left_abs_median": 0.023164167019717186,
+      "terminal_yaw_minmax": [
+        -0.03604452583870299,
+        0.03816622622042365
+      ],
+      "vx_levels": [
+        0.0,
+        0.1,
+        0.15
+      ],
+      "yaw_levels": [
+        0.0
+      ]
+    },
+    "pos_turn": {
+      "file": "go2_center_corrected_hankel_SELECTED_TURN_POS_CLEAN_N20_80.npz",
+      "columns": 80,
+      "valid": 882,
+      "terminal_forward_minmax": [
+        -0.027529034597231824,
+        0.01781921139793832
+      ],
+      "terminal_left_abs_median": 0.013926878694835207,
+      "terminal_yaw_minmax": [
+        0.154312240644912,
+        0.2517927354716205
+      ],
+      "vx_levels": [
+        0.0
+      ],
+      "yaw_levels": [
+        0.0,
+        0.2,
+        0.3
+      ]
+    },
+    "neg_turn": {
+      "file": "go2_center_corrected_hankel_SELECTED_TURN_NEG_CLEAN_N20_80.npz",
+      "columns": 80,
+      "valid": 896,
+      "terminal_forward_minmax": [
+        -0.02020602668019558,
+        0.010411570113203228
+      ],
+      "terminal_left_abs_median": 0.01571582046548515,
+      "terminal_yaw_minmax": [
+        -0.2342533912022675,
+        -0.1509976123522263
+      ],
+      "vx_levels": [
+        0.0
+      ],
+      "yaw_levels": [
+        -0.3,
+        -0.2,
+        0.0
+      ]
+    }
+  },
+  "hankel_shapes": {
+    "Up": [
+      20,
+      4762
+    ],
+    "Uf": [
+      40,
+      4762
+    ],
+    "Yp": [
+      30,
+      4762
+    ],
+    "Yf": [
+      60,
+      4762
+    ]
+  },
+  "dog2_note": "Updated live center correction for Dog2 body from live_forward_validation_1781881065.csv usable turn segments."
+}

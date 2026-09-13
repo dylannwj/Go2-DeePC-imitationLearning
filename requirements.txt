@@ -1,0 +1,13 @@
+# Versions recorded by the frozen Genesis release audit.
+numpy==2.4.4
+scipy
+cvxpy==1.8.2
+osqp==1.1.1
+quadrants==1.2.0
+
+# Install the CPU wheel and Genesis in the matching runtime environment.
+# torch==2.10.0+cpu
+# genesis-world==1.3.1
+
+# The physical ROS 2 node also requires system ROS 2 messages and a licensed
+# Gurobi installation; those are intentionally not pip requirements here.

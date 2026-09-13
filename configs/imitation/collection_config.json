@@ -1,0 +1,33 @@
+{
+  "artifact_manifest_sha256": "568967bb7d39c048a544aebcf99b4585580453212f9e500d11018b2b52e162bd",
+  "base_seed": 2026081600,
+  "batch_size": 8,
+  "cache_paths": {
+    "genesis_cache": "/tmp/mjlab_expert_compatibility_gate/genesis",
+    "matplotlib_cache": "/tmp/mjlab_expert_compatibility_gate/matplotlib",
+    "quadrants_cache": "/tmp/mjlab_expert_compatibility_gate/quadrants"
+  },
+  "collection_script_sha256": "4079e9dea42a1c5857051ebc76fdd171c366c8390ff533bce0f6404b56666040",
+  "collector_version": "expert-imitation-collector-v1.0",
+  "command_domain": [
+    [
+      -0.30000001192092896,
+      0.5
+    ],
+    [
+      -0.20000000298023224,
+      0.20000000298023224
+    ],
+    [
+      -0.5,
+      0.5
+    ]
+  ],
+  "duration_steps": 2000,
+  "episodes": 120,
+  "randomization": "none beyond deterministic episode schedule; flat plane, frozen Genesis physics, fixed PD, fixed robot and expert",
+  "requested_duration_s": 40.0,
+  "schema": "expert-imitation-collection-config-v1",
+  "settle_seconds": 1.0,
+  "settle_steps": 50
+}

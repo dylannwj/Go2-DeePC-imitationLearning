@@ -1,0 +1,431 @@
+{
+  "benchmark_protocol": {
+    "completion_criterion": {
+      "confirmation_intervals": 3,
+      "max_replans": 100,
+      "position_tolerance_m": 0.06,
+      "yaw_tolerance_deg": 5.729577951308233,
+      "yaw_tolerance_rad": 0.1
+    },
+    "direction_vector_convention": "unit world XY vector multiplied by distance",
+    "directions": [
+      "forward",
+      "backward",
+      "left",
+      "right",
+      "forward-left",
+      "forward-right",
+      "backward-left",
+      "backward-right"
+    ],
+    "episode_wall_timeout_s": 240.0,
+    "heading_sweep_deg": [
+      0.0,
+      15.0,
+      -15.0,
+      30.0,
+      -30.0,
+      45.0,
+      -45.0,
+      60.0,
+      -60.0,
+      75.0,
+      -75.0,
+      90.0,
+      -90.0,
+      120.0,
+      -120.0,
+      150.0,
+      -150.0,
+      180.0,
+      -180.0
+    ],
+    "heading_sweep_is_pure_yaw": true,
+    "heading_target_position_m": [
+      0.0,
+      0.0
+    ],
+    "historical_c2_only_comparison": "excluded",
+    "translation_distances_m": [
+      0.25,
+      0.75,
+      1.2
+    ],
+    "translation_target_yaw_deg": 0.0
+  },
+  "benchmark_semantics": "PASS means the frozen benchmark completed with unchanged artifacts; target reach and safety outcomes are reported empirically and are not formal safety claims.",
+  "designated_variant": "C2_PLUS_VX",
+  "final_controller": "FINAL_GENESIS_DEEPC_LEARNED_EXECUTION_CHAMPION",
+  "generated_utc": "2026-09-13T08:17:38.971615+00:00",
+  "historical_c2_only_used": false,
+  "identity": {
+    "active_constraints": {
+      "c2": {
+        "expression": "future_input[t, vy] + future_input[t, yaw_rate] <= 0.28800664310564905",
+        "inside_optimization": true,
+        "limit": 0.28800664310564905,
+        "scope": "every planned horizon step t=0..N-1",
+        "source_line": "constraints = [future_input[1::3] + future_input[2::3] <= float(limit)]"
+      },
+      "post_solver_command_rewriting": false,
+      "vx": {
+        "expression": "-0.8 <= future_input[t, vx] <= 0.8",
+        "inside_optimization": true,
+        "lower": -0.8,
+        "scope": "every planned horizon step t=0..N-1",
+        "source_lines": [
+          "constraints.append(future_input[0::3] >= lower)",
+          "constraints.append(future_input[0::3] <= upper)"
+        ],
+        "upper": 0.8
+      }
+    },
+    "artifact_hashes": {
+      "candidate_configuration": {
+        "path": "/home/dylan/Desktop/Go2Project/catastrophic_command_safety_v2/final_safety_refinement/pre_s6_minimal_safety_fix/candidate_config.json",
+        "sha256": "164230755a3cb3371453f9133223ceddffb7fb09ff794a51e0a6898aa691f827"
+      },
+      "deepc_configuration": {
+        "path": "/home/dylan/Desktop/Go2Project/final_deepc_student/target_suite_recovery/configs/deepc_final_recovered.json",
+        "sha256": "e1e105316ebc6a5b7f66e15821ec2e780eacda306b0711d9e478dc912c9ddd26"
+      },
+      "genesis_runtime_contract": {
+        "path": "/home/dylan/Desktop/Go2Project/catastrophic_command_safety_v2/configs/frozen_runtime_contract.json",
+        "sha256": "55ad3104db92a90a91e3dbefae5b1ac7344504ba2d29a1a76edf0de077ffd78b"
+      },
+      "go2_urdf": {
+        "path": "/home/dylan/Desktop/Go2Project/catastrophic_command_safety_v2/runtime_recovery/r3_python312_genesis131/reconstruction/venv/lib/python3.12/site-packages/genesis/assets/urdf/go2/urdf/go2.urdf",
+        "sha256": "4f306754e9b3d73930ac8362aa456eb8912f2e886665618e7eced9627c1704a4"
+      },
+      "hankel_data_bank": {
+        "path": "/home/dylan/Desktop/Go2Project/final_deepc_student/target_suite_recovery/data/hankel/final_student_deepc_hankel_v2_stride2.npz",
+        "sha256": "5ece444b2d82a75df6b751809d2b5f5c1aacfe06cc69a0919fa21532804bfb7b"
+      },
+      "learned_student_checkpoint": {
+        "path": "/home/dylan/Desktop/Go2Project/student_bc/linear_output_revision/checkpoints/final/go2_observable_student_bc_linear_v1.pt",
+        "sha256": "6169c02e924dfb09078d9cba63e4071abd11a477ab2b104e92506df7ce0ed7cc"
+      },
+      "plane_urdf": {
+        "path": "/home/dylan/Desktop/Go2Project/catastrophic_command_safety_v2/runtime_recovery/r3_python312_genesis131/reconstruction/venv/lib/python3.12/site-packages/genesis/assets/urdf/plane/plane.urdf",
+        "sha256": "be1a566d558bd89cabfee5b65d13f3c76acd4c009e3eb8830b369b2dfa079d29"
+      },
+      "ui_target_configuration": {
+        "path": "/home/dylan/Desktop/Go2Project/final_deepc_student/live_ui/configs/ui_config.json",
+        "sha256": "7f6d8ac0de2241357fffaadbd5fcf5f63792be3d13faa287b9612baa0249c19e"
+      }
+    },
+    "completion_criterion": {
+      "confirmation_intervals": 3,
+      "criterion": "measured position and wrapped yaw errors inside tolerance for three confirmation intervals",
+      "max_replans": 100,
+      "position_tolerance_m": 0.06,
+      "yaw_tolerance_deg": 5.729577951308233,
+      "yaw_tolerance_rad": 0.1
+    },
+    "deePC": {
+      "N": 20,
+      "T_ini": 10,
+      "hankel_stride": 2,
+      "input": [
+        "vx",
+        "vy",
+        "yaw_rate"
+      ],
+      "output": [
+        "forward_step_m",
+        "left_step_m",
+        "yaw_step_rad"
+      ],
+      "reference_gain": 2.75,
+      "sample_dt_s": 0.1
+    },
+    "designated_variant": "C2_PLUS_VX",
+    "final_controller": "FINAL_GENESIS_DEEPC_LEARNED_EXECUTION_CHAMPION",
+    "fingerprint_sha256": "8c8968a15b66c851bb1d26de1c2c1a21a52830473b358cde13aaefcb64b7bb29",
+    "genesis_runtime": {
+      "collision_enabled": true,
+      "constraint_solver": "Genesis Newton",
+      "control_timestep_s": 0.02,
+      "cvxpy": "1.8.2",
+      "genesis": "1.3.1",
+      "go2_urdf": "/home/dylan/Desktop/Go2Project/catastrophic_command_safety_v2/runtime_recovery/r3_python312_genesis131/reconstruction/venv/lib/python3.12/site-packages/genesis/assets/urdf/go2/urdf/go2.urdf",
+      "go2_urdf_sha256": "4f306754e9b3d73930ac8362aa456eb8912f2e886665618e7eced9627c1704a4",
+      "joint_limit_enabled": true,
+      "numpy": "2.4.4",
+      "osqp": "1.1.1",
+      "physics_steps_per_policy_action": 4,
+      "physics_timestep_s": 0.005,
+      "plane_urdf": "/home/dylan/Desktop/Go2Project/catastrophic_command_safety_v2/runtime_recovery/r3_python312_genesis131/reconstruction/venv/lib/python3.12/site-packages/genesis/assets/urdf/plane/plane.urdf",
+      "plane_urdf_sha256": "be1a566d558bd89cabfee5b65d13f3c76acd4c009e3eb8830b369b2dfa079d29",
+      "python": "3.12.13",
+      "python_executable": "/home/dylan/Desktop/Go2Project/catastrophic_command_safety_v2/runtime_recovery/r3_python312_genesis131/reconstruction/venv/bin/python",
+      "quadrants": "(1, 2, 0)",
+      "seed": 20260804,
+      "torch": "2.10.0+cpu",
+      "viewer": "disabled for benchmark"
+    },
+    "genesis_runtime_contract_sha256": "55ad3104db92a90a91e3dbefae5b1ac7344504ba2d29a1a76edf0de077ffd78b",
+    "genesis_safety_contract": {
+      "actual_joint_limit_violation": "q outside Genesis joint limits by > 1e-6 rad",
+      "applied_torque_limit_violation": "abs(robot.get_dofs_control_force) > manual effort limit + 1e-5 N",
+      "base_contact": "norm(net contact force at base link) > 1.0 N",
+      "fall": {
+        "abs_roll_or_pitch_above_rad": 1.0,
+        "base_contact": true,
+        "root_height_below_m": 0.12
+      },
+      "foot_contact": "norm(net contact force at each named foot link) > 1.0 N",
+      "nan_inf": "any nonfinite policy/state/target/torque/base measurement",
+      "recorded_metrics": [
+        "survival time",
+        "mean achieved vx/vy/yaw_rate",
+        "command sign correctness",
+        "net displacement",
+        "net yaw change",
+        "peak abs roll/pitch",
+        "base height min/max",
+        "peak requested/applied torque",
+        "joint position extrema",
+        "joint limit margin",
+        "peak abs joint velocity",
+        "peak abs action",
+        "peak abs action rate",
+        "fall/base contact/NaN/Inf counts"
+      ],
+      "requested_torque_exceedance": "abs(tau_requested) > manual effort limit + 1e-6 N",
+      "survival": "full declared duration with no termination reason"
+    },
+    "historical_c2_only_used": false,
+    "solver_settings": {
+      "normal": {
+        "delta_input_weight": 0.1,
+        "g_weight": 0.001,
+        "input_weights": [
+          1e-06,
+          1e-06,
+          1e-06
+        ],
+        "past_input_weight": 50.0,
+        "past_output_weight": 200.0,
+        "runtime_command_projection": false,
+        "runtime_input_bounds": null,
+        "solver": "OSQP",
+        "solver_eps_abs": 1e-05,
+        "solver_eps_rel": 1e-05,
+        "solver_max_iter": 50000,
+        "tracking_weights": [
+          40.0,
+          40.0,
+          20.0
+        ]
+      },
+      "retry": {
+        "one_retry_only": true,
+        "solver": "OSQP",
+        "solver_eps_abs": 1e-08,
+        "solver_eps_rel": 1e-08,
+        "solver_max_iter": 100000,
+        "trigger": "post-solver C2 or vx violation greater than 2e-8",
+        "warm_start": true
+      }
+    },
+    "source_assertions": {
+      "adapter_passes_vx_bounds": true,
+      "candidate_accepts_vx_bounds": true,
+      "candidate_config_post_solver_rewriting_false": true,
+      "candidate_has_exact_c2_source_line": true,
+      "candidate_has_vx_lower_source_line": true,
+      "candidate_has_vx_upper_source_line": true,
+      "deepc_runtime_projection_false": true,
+      "imported_ui_modules_match": true,
+      "live_completion_matches_frozen": true,
+      "live_runtime_delivers_first_planned_input": true,
+      "live_runtime_post_solver_rewriting_false": true,
+      "student_command_boundary_exact": true
+    },
+    "source_hashes": {
+      "benchmark_harness_source": {
+        "path": "/home/dylan/Desktop/Go2Project/final_deepc_student/live_ui/benchmarks/final_champion_benchmark.py",
+        "sha256": "458ba60c49e921dd87a135659e4fcf13f63faba362cebcf8888f470017f1f145"
+      },
+      "candidate_qp_source": {
+        "path": "/home/dylan/Desktop/Go2Project/catastrophic_command_safety_v2/final_safety_refinement/pre_s6_minimal_safety_fix/run_minimal_safety_fix_search.py",
+        "sha256": "48364f5f2d9b4f7cbff05cf270c3d38c321b280d660fb3869a27e24a61626d85"
+      },
+      "deepc_source": {
+        "path": "/home/dylan/Desktop/Go2Project/final_deepc_student/target_suite_recovery/controllers/final_receding_deepc.py",
+        "sha256": "f2f5844cf108412fcf472c4ba7d65e7e1b967df0b4d32a8c6659f9ead1b0e2ea"
+      },
+      "frozen_controller_adapter": {
+        "path": "/home/dylan/Desktop/Go2Project/catastrophic_command_safety_v2/final_safety_refinement/final_champion_genesis_ui/frozen_controller.py",
+        "sha256": "5b997a2564c9f9fe857fabaa98614a0fdcf9a575beb7d5c61883f428aa433457"
+      },
+      "genesis_evaluator_source": {
+        "path": "/home/dylan/Desktop/Go2Project/scripts/evaluate_command_bc_genesis.py",
+        "sha256": "153cab7983b659f5830b1633c992decae1b7733340891cf36a8bc9d91dbe642c"
+      },
+      "genesis_scene_source": {
+        "path": "/home/dylan/Desktop/Go2Project/final_deepc_student/live_ui/app/genesis_window.py",
+        "sha256": "f24b4361aa418f6a2935d18c5727818c77f85935f7d5cad1b4575ff5284d1d37"
+      },
+      "live_runtime_source": {
+        "path": "/home/dylan/Desktop/Go2Project/final_deepc_student/live_ui/scripts/run_live_product.py",
+        "sha256": "1fb46d46918335b512881e78ef3f3e6ef9c8e21a3e16e51e117fb6b42d64f853"
+      },
+      "student_linear_constants_source": {
+        "path": "/home/dylan/Desktop/Go2Project/student_bc/linear_output_revision/scripts/linear_bc_common.py",
+        "sha256": "e31d19bbdcdd6aadc63c58755fb5a4c093f4a61092ef9b4e3f78b98c80af850c"
+      },
+      "student_runtime_source": {
+        "path": "/home/dylan/Desktop/Go2Project/final_deepc_student/target_suite_recovery/controllers/direct_student_runtime.py",
+        "sha256": "41024eb374eb73bfcfcf186e627a4fe3ff471605d53027163f13e3e23d410b36"
+      },
+      "ui_bridge_source": {
+        "path": "/home/dylan/Desktop/Go2Project/final_deepc_student/live_ui/app/ui_runtime_bridge.py",
+        "sha256": "43a854369505b339ddc600f495acba1882df66463cc6d4105123d1e9f3f6f8d0"
+      },
+      "ui_state_source": {
+        "path": "/home/dylan/Desktop/Go2Project/final_deepc_student/live_ui/app/ui_state.py",
+        "sha256": "5eb024190eb64901d39637148ec77545d869ac6ab99e8cc298693c7b02318cc5"
+      },
+      "ui_target_source": {
+        "path": "/home/dylan/Desktop/Go2Project/final_deepc_student/live_ui/app/final_deepc_ui.py",
+        "sha256": "441d50e8a918f18175e1e690238662e4ab3dadd881849957422b83b2b8b25a7a"
+      }
+    },
+    "student": {
+      "action_scale": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "architecture": [
+        48,
+        256,
+        256,
+        12
+      ],
+      "checkpoint_sha256": "6169c02e924dfb09078d9cba63e4071abd11a477ab2b104e92506df7ce0ed7cc",
+      "effort_limit": [
+        23.5,
+        23.5,
+        45.43000030517578,
+        23.5,
+        23.5,
+        45.43000030517578,
+        23.5,
+        23.5,
+        45.43000030517578,
+        23.5,
+        23.5,
+        45.43000030517578
+      ],
+      "kd": [
+        1.0,
+        1.0,
+        2.0,
+        1.0,
+        1.0,
+        2.0,
+        1.0,
+        1.0,
+        2.0,
+        1.0,
+        1.0,
+        2.0
+      ],
+      "kp": [
+        20.0,
+        20.0,
+        40.0,
+        20.0,
+        20.0,
+        40.0,
+        20.0,
+        20.0,
+        40.0,
+        20.0,
+        20.0,
+        40.0
+      ],
+      "q_default_canonical": [
+        0.10000000149011612,
+        0.8999999761581421,
+        -1.7999999523162842,
+        -0.10000000149011612,
+        0.8999999761581421,
+        -1.7999999523162842,
+        0.10000000149011612,
+        0.8999999761581421,
+        -1.7999999523162842,
+        -0.10000000149011612,
+        0.8999999761581421,
+        -1.7999999523162842
+      ]
+    },
+    "ui_target_handling": {
+      "canvas_xy": "target yaw defaults to current measured yaw",
+      "canvas_yaw_aim": "yaw = atan2(pointer_y - target_y, pointer_x - target_x)",
+      "config_default_target_id": "P1",
+      "numeric_entry": "Pose3.from_degrees(x_m, y_m, yaw_deg), then normalize yaw",
+      "target_frame": "world [x_m, y_m, yaw_rad]",
+      "target_locked_while_running": true,
+      "target_presets": [
+        {
+          "label": "standing",
+          "target_id": "P0",
+          "x_m": 0.0,
+          "y_m": 0.0,
+          "yaw_rad": 0.0
+        },
+        {
+          "label": "FORWARD / T1_forward_025",
+          "target_id": "P1",
+          "x_m": 0.25,
+          "y_m": 0.0,
+          "yaw_rad": 0.0
+        },
+        {
+          "label": "LATERAL / I_lateral_correction_015",
+          "target_id": "P2",
+          "x_m": 0.0,
+          "y_m": 0.15,
+          "yaw_rad": 0.0
+        },
+        {
+          "label": "YAW / T4_yaw_030",
+          "target_id": "P3",
+          "x_m": 0.0,
+          "y_m": 0.0,
+          "yaw_rad": 0.3
+        },
+        {
+          "label": "MIXED / T5_forward_yaw",
+          "target_id": "P4",
+          "x_m": 0.2,
+          "y_m": 0.0,
+          "yaw_rad": 0.3
+        },
+        {
+          "label": "T2_lateral_020",
+          "target_id": "P5",
+          "x_m": 0.0,
+          "y_m": 0.2,
+          "yaw_rad": 0.0
+        }
+      ]
+    }
+  },
+  "post_freeze_controller_changes": "NONE",
+  "schema": "final-genesis-deepc-learned-execution-champion-c2-plus-vx-freeze-v1",
+  "status": "FROZEN"
+}

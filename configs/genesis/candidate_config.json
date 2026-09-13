@@ -1,0 +1,103 @@
+{
+  "base_controller": "FROZEN_PRE_S6_DEEPC",
+  "candidate_name": "PRE_S6_MINIMAL_SAFETY_CANDIDATE_V1",
+  "constraint": {
+    "derivation": "midpoint of maximum successful exact replay/T2 value and verified unsafe direct S3 value",
+    "expression": "future_input[t, vy] + future_input[t, yaw_rate] <= limit for t=0..N-1",
+    "feature_coefficients": [
+      0.0,
+      1.0,
+      1.0
+    ],
+    "input_labels": [
+      "vx",
+      "vy",
+      "yaw_rate"
+    ],
+    "inside_optimization": true,
+    "limit": 0.28800664310564905,
+    "post_solver_rewriting": false,
+    "target_independent": true,
+    "type": "single_linear_mixed_command_facet"
+  },
+  "family": "NARROW_MIXED_COMMAND_MINIMAL_FIX",
+  "frozen_deepc_parameters": {
+    "architecture": "one unified 3-input measured-feedback receding-horizon DeePC directly drives the frozen student",
+    "base_candidate": "deepc_recovery_candidate.json",
+    "dataset_v2_sha256": "e7f7f62e9bf54eb64956eb193a974d78690533bd34fa0a29234b08e268c902a3",
+    "deepc": {
+      "N": 20,
+      "T_ini": 10,
+      "hankel_stride": 2,
+      "input": [
+        "vx",
+        "vy",
+        "yaw_rate"
+      ],
+      "output": [
+        "forward_step_m",
+        "left_step_m",
+        "yaw_step_rad"
+      ],
+      "reference_gain": 2.75,
+      "sample_dt_s": 0.1
+    },
+    "hankel_sha256": "5ece444b2d82a75df6b751809d2b5f5c1aacfe06cc69a0919fa21532804bfb7b",
+    "qp": {
+      "delta_input_weight": 0.1,
+      "g_weight": 0.001,
+      "input_weights": [
+        1e-06,
+        1e-06,
+        1e-06
+      ],
+      "past_input_weight": 50.0,
+      "past_output_weight": 200.0,
+      "runtime_command_projection": false,
+      "runtime_input_bounds": null,
+      "solver": "OSQP",
+      "solver_eps_abs": 1e-05,
+      "solver_eps_rel": 1e-05,
+      "solver_max_iter": 50000,
+      "tracking_weights": [
+        40.0,
+        40.0,
+        20.0
+      ]
+    },
+    "schema": "final-deepc-student-recovered-config-v1",
+    "status": "FROZEN_FINAL_RECOVERY_CONFIGURATION",
+    "student_checkpoint_sha256": "6169c02e924dfb09078d9cba63e4071abd11a477ab2b104e92506df7ce0ed7cc",
+    "target_specific_logic": false
+  },
+  "prohibited_changes": {
+    "Genesis": false,
+    "Hankel": false,
+    "PD": false,
+    "T_ini": false,
+    "UI": false,
+    "decoder": false,
+    "horizon": false,
+    "lambda_g": false,
+    "objective": false,
+    "student": false,
+    "targets": false,
+    "thresholds": false
+  },
+  "runtime": {
+    "expected": {
+      "genesis": "1.3.1",
+      "numpy": "2.4.4",
+      "python": "3.12.13",
+      "quadrants": "1.2.0"
+    },
+    "hankel_sha256": "5ece444b2d82a75df6b751809d2b5f5c1aacfe06cc69a0919fa21532804bfb7b",
+    "no_rescue_clipping_override": true,
+    "one_reload_each_P0_P1_P2_P3_P4_P5_T2": true,
+    "same_reset_targets_stop_and_time_limits": true,
+    "student_sha256": "6169c02e924dfb09078d9cba63e4071abd11a477ab2b104e92506df7ce0ed7cc",
+    "validated_python": "/home/dylan/Desktop/Go2Project/catastrophic_command_safety_v2/runtime_recovery/r3_python312_genesis131/reconstruction/venv/bin/python"
+  },
+  "schema": "pre-s6-minimal-safety-candidate-config-v1",
+  "status": "OFFLINE_GATE_PASS_GENESIS_AUTHORIZED"
+}
